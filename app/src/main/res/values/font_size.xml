@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="text_genre">10sp</dimen>
+    <dimen name="text_date">12sp</dimen>
+    <dimen name="text_age">14sp</dimen>
+    <dimen name="text_title">20sp</dimen>
+    <dimen name="text_actors">16sp</dimen>
+    <dimen name="text_description">14sp</dimen>
+    <dimen name="text_actor">12sp</dimen>
+</resources>
