@@ -2,5 +2,7 @@
 <resources>
     <color name="black">#000000</color>
     <color name="white">#FFFFFF</color>
+
     <color name="bottomSheet">#F1F1F1</color>
+    <color name="layoutMain">#E5E5E5</color>
 </resources>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/itemMovieLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/itemMovieImage"
+        android:layout_width="150dp"
+        android:layout_height="216dp"
+        android:background="@drawable/style_movie_card"
+        android:contentDescription="@string/description_movie"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@drawable/preview" />
+
+    <TextView
+        android:id="@+id/itemMovieTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="2dp"
+        android:fontFamily="@font/roboto_medium"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_item_movie_title"
+        app:layout_constraintEnd_toEndOf="@+id/itemMovieImage"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/itemMovieImage"
+        app:layout_constraintTop_toBottomOf="@+id/itemMovieImage"
+        tools:text="@string/film_title" />
+
+    <TextView
+        android:id="@+id/itemMovieDescription"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/roboto_regular"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_item_movie_description"
+        app:layout_constraintEnd_toEndOf="@+id/itemMovieTitle"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/itemMovieTitle"
+        app:layout_constraintTop_toBottomOf="@+id/itemMovieTitle"
+        tools:text="Эйч — загадочный  и холодный на вид джентльмен, но внутри него пылает жажда справедливости. Преследуя..." />
+
+    <ImageView
+        android:id="@+id/itemMovieStar1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="64dp"
+        android:contentDescription="@string/description_star"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/itemMovieDescription"
+        app:layout_constraintTop_toBottomOf="@+id/itemMovieDescription"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/ic_star_fill" />
+
+    <ImageView
+        android:id="@+id/itemMovieStar2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintStart_toEndOf="@+id/itemMovieStar1"
+        app:layout_constraintTop_toTopOf="@+id/itemMovieStar1"
+        app:srcCompat="@drawable/ic_star_fill" />
+
+    <ImageView
+        android:id="@+id/itemMovieStar3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/description_star"
+        app:layout_constraintStart_toEndOf="@+id/itemMovieStar2"
+        app:layout_constraintTop_toTopOf="@+id/itemMovieStar1"
+        app:srcCompat="@drawable/ic_star_fill" />
+
+    <ImageView
+        android:id="@+id/itemMovieStar4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/description_star"
+        app:layout_constraintStart_toEndOf="@+id/itemMovieStar3"
+        app:layout_constraintTop_toTopOf="@+id/itemMovieStar1"
+        app:srcCompat="@drawable/ic_star_fill" />
+
+    <ImageView
+        android:id="@+id/itemMovieStar5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/description_star"
+        app:layout_constraintStart_toEndOf="@+id/itemMovieStar4"
+        app:layout_constraintTop_toTopOf="@+id/itemMovieStar1"
+        app:srcCompat="@drawable/ic_star_fill" />
+
+    <TextView
+        android:id="@+id/itemMovieAge"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:background="@drawable/style_age"
+        android:fontFamily="@font/roboto_regular"
+        android:gravity="center"
+        android:text="@string/film_age"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_item_movie_age"
+        app:layout_constraintBottom_toBottomOf="@+id/itemMovieStar1"
+        app:layout_constraintEnd_toEndOf="@+id/itemMovieDescription" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
