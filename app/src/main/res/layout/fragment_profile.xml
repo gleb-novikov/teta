@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F1F1F1">
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textTitleName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="48dp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="@string/text_title_name"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_regular"
+                android:text="@string/text_title_email"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@+id/textTitleName"
+                app:layout_constraintTop_toBottomOf="@+id/textTitleName" />
+
+            <ImageView
+                android:id="@+id/imageProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="32dp"
+                android:contentDescription="@string/description_profile"
+                app:layout_constraintBottom_toBottomOf="@+id/textEmail"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textTitleName"
+                app:srcCompat="@drawable/ic_profile" />
+
+            <TextView
+                android:id="@+id/textTitleInterests"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="48dp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="@string/text_title_interesting"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/textEmail"
+                app:layout_constraintTop_toBottomOf="@+id/textEmail" />
+
+            <HorizontalScrollView
+                android:id="@+id/genresScrollView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="@+id/imageProfile"
+                app:layout_constraintStart_toStartOf="@+id/textTitleInterests"
+                app:layout_constraintTop_toBottomOf="@+id/textTitleInterests">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/itemGenre1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:background="@drawable/style_genre"
+                        android:fontFamily="@font/roboto_regular"
+                        android:paddingStart="8dp"
+                        android:paddingTop="1.5dp"
+                        android:paddingEnd="8dp"
+                        android:paddingBottom="1.5dp"
+                        android:text="@string/genre_fighters"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_genre" />
+
+                    <TextView
+                        android:id="@+id/itemGenre2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:background="@drawable/style_genre"
+                        android:fontFamily="@font/roboto_regular"
+                        android:paddingStart="8dp"
+                        android:paddingTop="1.5dp"
+                        android:paddingEnd="8dp"
+                        android:paddingBottom="1.5dp"
+                        android:text="@string/genre_dramas"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_genre" />
+
+                    <TextView
+                        android:id="@+id/itemGenre3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/style_genre"
+                        android:fontFamily="@font/roboto_regular"
+                        android:paddingStart="8dp"
+                        android:paddingTop="1.5dp"
+                        android:paddingEnd="8dp"
+                        android:paddingBottom="1.5dp"
+                        android:text="@string/genre_comedy"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_genre" />
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <TextView
+                android:id="@+id/textTitlePersonal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="48dp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="@string/text_title_personal"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/genresScrollView"
+                app:layout_constraintTop_toBottomOf="@+id/genresScrollView" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayoutName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:textColorHint="#A9A9A9"
+                android:theme="@style/TextInputHint"
+                app:boxStrokeColor="#A9A9A9"
+                app:layout_constraintEnd_toEndOf="@+id/imageProfile"
+                app:layout_constraintStart_toStartOf="@+id/textTitlePersonal"
+                app:layout_constraintTop_toBottomOf="@+id/textTitlePersonal">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:hint="@string/text_hint_name"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textColorHighlight="#A9A9A9"
+                    android:textColorHint="#A9A9A9"
+                    android:textColorLink="#A9A9A9" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayoutPassword"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColorHint="#A9A9A9"
+                android:theme="@style/TextInputHint"
+                app:boxStrokeColor="#A9A9A9"
+                app:layout_constraintEnd_toEndOf="@+id/imageProfile"
+                app:layout_constraintStart_toStartOf="@+id/textTitlePersonal"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayoutName">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:hint="@string/text_hint_password"
+                    android:inputType="textPassword"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textColorHighlight="#A9A9A9"
+                    android:textColorHint="#A9A9A9"
+                    android:textColorLink="#A9A9A9" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayoutEmail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColorHint="#A9A9A9"
+                android:theme="@style/TextInputHint"
+                app:boxStrokeColor="#A9A9A9"
+                app:layout_constraintEnd_toEndOf="@+id/imageProfile"
+                app:layout_constraintStart_toStartOf="@+id/textTitlePersonal"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayoutPassword">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:hint="@string/text_hint_email"
+                    android:inputType="textEmailAddress"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textColorHighlight="#A9A9A9"
+                    android:textColorHint="#A9A9A9"
+                    android:textColorLink="#A9A9A9" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayoutPhone"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColorHint="#A9A9A9"
+                android:theme="@style/TextInputHint"
+                app:boxStrokeColor="#A9A9A9"
+                app:layout_constraintEnd_toEndOf="@+id/imageProfile"
+                app:layout_constraintStart_toStartOf="@+id/textTitlePersonal"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayoutEmail">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:hint="@string/text_hint_phone"
+                    android:inputType="phone"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textColorHighlight="#A9A9A9"
+                    android:textColorHint="#A9A9A9"
+                    android:textColorLink="#A9A9A9" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/textTitleSettings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="48dp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="@string/text_title_settings"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/genresScrollView"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayoutPhone" />
+
+            <Button
+                android:id="@+id/buttonNavNotifications"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@android:color/transparent"
+                android:drawableEnd="@drawable/ic_arrow"
+                android:fontFamily="@font/roboto_regular"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:paddingLeft="0dp"
+                android:paddingTop="0dp"
+                android:paddingRight="0dp"
+                android:paddingBottom="0dp"
+                android:text="@string/button_notifications"
+                android:textAlignment="viewStart"
+                android:textAllCaps="false"
+                app:iconPadding="0dp"
+                app:layout_constraintEnd_toEndOf="@+id/imageProfile"
+                app:layout_constraintStart_toStartOf="@+id/textTitleName"
+                app:layout_constraintTop_toBottomOf="@+id/textTitleSettings" />
+
+            <Button
+                android:id="@+id/buttonNavConfidentiality"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:drawableEnd="@drawable/ic_arrow"
+                android:fontFamily="@font/roboto_regular"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:paddingLeft="0dp"
+                android:paddingTop="0dp"
+                android:paddingRight="0dp"
+                android:paddingBottom="0dp"
+                android:text="@string/button_confidentiality"
+                android:textAlignment="viewStart"
+                android:textAllCaps="false"
+                app:iconPadding="0dp"
+                app:layout_constraintEnd_toEndOf="@+id/imageProfile"
+                app:layout_constraintStart_toStartOf="@+id/textTitleName"
+                app:layout_constraintTop_toBottomOf="@+id/buttonNavNotifications" />
+
+            <Button
+                android:id="@+id/buttonNavTheme"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:drawableEnd="@drawable/ic_arrow"
+                android:fontFamily="@font/roboto_regular"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:paddingLeft="0dp"
+                android:paddingTop="0dp"
+                android:paddingRight="0dp"
+                android:paddingBottom="0dp"
+                android:text="@string/button_theme"
+                android:textAlignment="viewStart"
+                android:textAllCaps="false"
+                app:iconPadding="0dp"
+                app:layout_constraintEnd_toEndOf="@+id/imageProfile"
+                app:layout_constraintStart_toStartOf="@+id/textTitleName"
+                app:layout_constraintTop_toBottomOf="@+id/buttonNavConfidentiality" />
+
+            <Button
+                android:id="@+id/buttonNavLanguage"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:drawableEnd="@drawable/ic_arrow"
+                android:fontFamily="@font/roboto_regular"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:paddingLeft="0dp"
+                android:paddingTop="0dp"
+                android:paddingRight="0dp"
+                android:paddingBottom="0dp"
+                android:text="@string/button_language"
+                android:textAlignment="viewStart"
+                android:textAllCaps="false"
+                app:iconPadding="0dp"
+                app:layout_constraintEnd_toEndOf="@+id/imageProfile"
+                app:layout_constraintStart_toStartOf="@+id/textTitleName"
+                app:layout_constraintTop_toBottomOf="@+id/buttonNavTheme" />
+
+            <Button
+                android:id="@+id/buttonNavStorage"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:drawableEnd="@drawable/ic_arrow"
+                android:fontFamily="@font/roboto_regular"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:paddingLeft="0dp"
+                android:paddingTop="0dp"
+                android:paddingRight="0dp"
+                android:paddingBottom="0dp"
+                android:text="@string/button_storage"
+                android:textAlignment="viewStart"
+                android:textAllCaps="false"
+                app:iconPadding="0dp"
+                app:layout_constraintEnd_toEndOf="@+id/imageProfile"
+                app:layout_constraintStart_toStartOf="@+id/textTitleName"
+                app:layout_constraintTop_toBottomOf="@+id/buttonNavLanguage" />
+
+            <TextView
+                android:id="@+id/textTitleApp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="48dp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="@string/text_title_app"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/genresScrollView"
+                app:layout_constraintTop_toBottomOf="@+id/buttonNavStorage" />
+
+            <Button
+                android:id="@+id/buttonNavQuestion"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@android:color/transparent"
+                android:drawableEnd="@drawable/ic_arrow"
+                android:fontFamily="@font/roboto_regular"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:paddingLeft="0dp"
+                android:paddingTop="0dp"
+                android:paddingRight="0dp"
+                android:paddingBottom="0dp"
+                android:text="@string/button_question"
+                android:textAlignment="viewStart"
+                android:textAllCaps="false"
+                app:iconPadding="0dp"
+                app:layout_constraintEnd_toEndOf="@+id/imageProfile"
+                app:layout_constraintStart_toStartOf="@+id/textTitleName"
+                app:layout_constraintTop_toBottomOf="@+id/textTitleApp" />
+
+            <Button
+                android:id="@+id/buttonNavProblem"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:drawableEnd="@drawable/ic_arrow"
+                android:fontFamily="@font/roboto_regular"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:paddingLeft="0dp"
+                android:paddingTop="0dp"
+                android:paddingRight="0dp"
+                android:paddingBottom="0dp"
+                android:text="@string/button_problem"
+                android:textAlignment="viewStart"
+                android:textAllCaps="false"
+                app:iconPadding="0dp"
+                app:layout_constraintEnd_toEndOf="@+id/imageProfile"
+                app:layout_constraintStart_toStartOf="@+id/textTitleName"
+                app:layout_constraintTop_toBottomOf="@+id/buttonNavQuestion" />
+
+            <Button
+                android:id="@+id/buttonExit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="32dp"
+                android:background="#E4E4E4"
+                android:backgroundTint="#E4E4E4"
+                android:fontFamily="@font/roboto_medium"
+                android:text="@string/button_exit"
+                android:textAllCaps="false"
+                android:textSize="16sp"
+                android:theme="@style/ButtonGrey"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/imageProfile"
+                app:layout_constraintStart_toStartOf="@+id/textTitleName"
+                app:layout_constraintTop_toBottomOf="@+id/buttonNavProblem" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

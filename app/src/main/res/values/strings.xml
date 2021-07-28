@@ -15,6 +15,25 @@
 
     <string name="text_popular">Популярное сейчас</string>
 
+    <string name="text_title_name">Константин</string>
+    <string name="text_title_email">konst.89@mail.com</string>
+    <string name="text_title_interesting">Интересы</string>
+    <string name="text_title_personal">Личные данные</string>
+    <string name="text_hint_name">Имя</string>
+    <string name="text_hint_password">Пароль</string>
+    <string name="text_hint_email">E-mail</string>
+    <string name="text_hint_phone">Телефон</string>
+    <string name="text_title_settings">Настройки</string>
+    <string name="button_notifications">Уведомления и звуки</string>
+    <string name="button_confidentiality">Конфедициальность</string>
+    <string name="button_theme">Тема</string>
+    <string name="button_language">Язык</string>
+    <string name="button_storage">Данные и память</string>
+    <string name="text_title_app">Приложение</string>
+    <string name="button_question">Задать вопрос</string>
+    <string name="button_problem">Сообщить о проблеме</string>
+    <string name="button_exit">Выйти</string>
+
     <string name="genre_fighters">боевики</string>
     <string name="genre_dramas">драмы</string>
     <string name="genre_comedy">комедии</string>
@@ -27,4 +46,5 @@
     <string name="description_star">Star</string>
     <string name="description_movie">Movie</string>
     <string name="description_search">Search</string>
+    <string name="description_profile">Profile</string>
 </resources>
