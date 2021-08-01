@@ -4,15 +4,201 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/layoutMain"
     tools:context=".MainActivity">
 
-    <TextView
+    <ImageView
+        android:id="@+id/buttonSearch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:contentDescription="@string/description_search"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_search" />
+
+    <TextView
+        android:id="@+id/textPopular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/roboto_bold"
+        android:text="@string/text_popular"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_popular"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonSearch" />
+
+    <HorizontalScrollView
+        android:id="@+id/genresScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textPopular">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/itemGenre1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/style_genre"
+                android:fontFamily="@font/roboto_regular"
+                android:paddingStart="8dp"
+                android:paddingTop="1.5dp"
+                android:paddingEnd="8dp"
+                android:paddingBottom="1.5dp"
+                android:text="@string/genre_fighters"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_genre" />
+
+            <TextView
+                android:id="@+id/itemGenre2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/style_genre"
+                android:fontFamily="@font/roboto_regular"
+                android:paddingStart="8dp"
+                android:paddingTop="1.5dp"
+                android:paddingEnd="8dp"
+                android:paddingBottom="1.5dp"
+                android:text="@string/genre_dramas"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_genre" />
+
+            <TextView
+                android:id="@+id/itemGenre3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/style_genre"
+                android:fontFamily="@font/roboto_regular"
+                android:paddingStart="8dp"
+                android:paddingTop="1.5dp"
+                android:paddingEnd="8dp"
+                android:paddingBottom="1.5dp"
+                android:text="@string/genre_comedy"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_genre" />
+
+            <TextView
+                android:id="@+id/itemGenre4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/style_genre"
+                android:fontFamily="@font/roboto_regular"
+                android:paddingStart="8dp"
+                android:paddingTop="1.5dp"
+                android:paddingEnd="8dp"
+                android:paddingBottom="1.5dp"
+                android:text="@string/genre_arthouse"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_genre" />
+
+            <TextView
+                android:id="@+id/itemGenre5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/style_genre"
+                android:fontFamily="@font/roboto_regular"
+                android:paddingStart="8dp"
+                android:paddingTop="1.5dp"
+                android:paddingEnd="8dp"
+                android:paddingBottom="1.5dp"
+                android:text="@string/genre_melodramas"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_genre" />
+
+            <TextView
+                android:id="@+id/itemGenre6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/style_genre"
+                android:fontFamily="@font/roboto_regular"
+                android:paddingStart="8dp"
+                android:paddingTop="1.5dp"
+                android:paddingEnd="8dp"
+                android:paddingBottom="1.5dp"
+                android:text="@string/genre_adventure"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_genre" />
+
+            <TextView
+                android:id="@+id/itemGenre7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/style_genre"
+                android:fontFamily="@font/roboto_regular"
+                android:paddingStart="8dp"
+                android:paddingTop="1.5dp"
+                android:paddingEnd="8dp"
+                android:paddingBottom="1.5dp"
+                android:text="@string/genre_detectives"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_genre" />
+
+            <TextView
+                android:id="@+id/itemGenre8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/style_genre"
+                android:fontFamily="@font/roboto_regular"
+                android:paddingStart="8dp"
+                android:paddingTop="1.5dp"
+                android:paddingEnd="8dp"
+                android:paddingBottom="1.5dp"
+                android:text="@string/genre_fantastic"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_genre" />
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerMovies"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationMain"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/genresScrollView"
+        app:spanCount="2" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationMain"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:itemBackground="@drawable/style_menu_state"
+        app:itemIconTint="@color/black"
+        app:labelVisibilityMode="unlabeled"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/navigation_items" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

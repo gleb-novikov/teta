@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">MTS.Teta</string>
-    <string name="film_genre">боевики</string>
+
     <string name="film_date">22.04.2021</string>
     <string name="film_age">18+</string>
     <string name="film_title">Гнев человеческий</string>
@@ -9,7 +9,22 @@
     <string name="film_actor_1">Джейсон Стэйтем</string>
     <string name="film_actor_2">Холт Маккэллани</string>
     <string name="film_actor_3">Джош Харнетт</string>
+
     <string name="menu_item_home">Домой</string>
     <string name="menu_item_profile">Профиль</string>
+
+    <string name="text_popular">Популярное сейчас</string>
+
+    <string name="genre_fighters">боевики</string>
+    <string name="genre_dramas">драмы</string>
+    <string name="genre_comedy">комедии</string>
+    <string name="genre_arthouse">артхаус</string>
+    <string name="genre_melodramas">мелодрамы</string>
+    <string name="genre_adventure">приключения</string>
+    <string name="genre_detectives">детективы</string>
+    <string name="genre_fantastic">фантастика</string>
+
     <string name="description_star">Star</string>
+    <string name="description_movie">Movie</string>
+    <string name="description_search">Search</string>
 </resources>
