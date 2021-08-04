@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="TextHeaderLarge">
+        <item name="android:fontFamily">@font/roboto_medium</item>
+        <item name="android:textSize">@dimen/text_header_large</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="TextHeaderMedium">
+        <item name="android:fontFamily">@font/roboto_medium</item>
+        <item name="android:textSize">@dimen/text_header_medium</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="TextStandard">
+        <item name="android:fontFamily">@font/roboto_regular</item>
+        <item name="android:textSize">@dimen/text_standard</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="InputLayoutPersonal">
+        <item name="android:theme">@style/TextInputHint</item>
+        <item name="android:textColorHint">@color/inputHint</item>
+        <item name="boxStrokeColor">@color/inputStroke</item>
+    </style>
+
+    <style name="InputPersonal">
+        <item name="android:fontFamily">@font/roboto_regular</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="ItemListMenu" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:paddingStart">0dp</item>
+        <item name="android:paddingEnd">0dp</item>
+        <item name="android:fontFamily">@font/roboto_regular</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textAlignment">viewStart</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:drawableEnd">@drawable/ic_arrow</item>
+        <item name="iconPadding">0dp</item>
+    </style>
+
+    <style name="ButtonExit">
+        <item name="android:theme">@style/ButtonGrey</item>
+        <item name="android:background">@drawable/style_button_exit</item>
+        <item name="android:fontFamily">@font/roboto_medium</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">@dimen/button</item>
+    </style>
+</resources>
