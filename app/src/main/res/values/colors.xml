@@ -5,4 +5,11 @@
 
     <color name="bottomSheet">#F1F1F1</color>
     <color name="layoutMain">#E5E5E5</color>
+    <color name="layoutProfile">#F1F1F1</color>
+
+    <color name="inputHint">#A9A9A9</color>
+    <color name="inputStroke">#A9A9A9</color>
+    <color name="buttonGray">#E4E4E4</color>
+
+    <color name="buttonExit">#C4C4C4</color>
 </resources>

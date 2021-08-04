@@ -13,4 +13,11 @@
     <dimen name="text_item_movie_title">14sp</dimen>
     <dimen name="text_item_movie_description">12sp</dimen>
     <dimen name="text_item_movie_age">7sp</dimen>
+
+    <dimen name="text_header_large">20sp</dimen>
+    <dimen name="text_header_medium">16sp</dimen>
+    
+    <dimen name="text_standard">14sp</dimen>
+
+    <dimen name="button">16sp</dimen>
 </resources>
