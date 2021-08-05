@@ -1,7 +1,7 @@
 package com.novikov.teta.movies
 
 class MoviesDataSourceImpl : MoviesDataSource {
-    override fun getMovies() = listOf(
+    override fun getMovies() = mutableListOf(
             MovieDto(
                     title = "Гнев человеческий",
                     description = "Эйч — загадочный и холодный на вид джентльмен, но внутри него пылает жажда справедливости. Преследуя...",
