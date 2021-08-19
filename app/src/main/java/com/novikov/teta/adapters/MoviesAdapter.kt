@@ -8,13 +8,13 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.novikov.teta.R
-import com.novikov.teta.movies.MovieDto
+import com.novikov.teta.database.Movie
 import com.squareup.picasso.Picasso
 
 class MoviesAdapter(
-    private val listener: (movie: MovieDto) -> Unit
+    private val listener: (movie: Movie) -> Unit
 ) : RecyclerView.Adapter<MoviesAdapter.MovieViewHolder>() {
-    private var dataList: MutableList<MovieDto> = ArrayList()
+    private var dataList: MutableList<Movie> = ArrayList()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_movie, parent, false)
@@ -30,7 +30,7 @@ class MoviesAdapter(
 
     override fun getItemCount(): Int = dataList.size
 
-    fun initData(movies: List<MovieDto>) {
+    fun initData(movies: List<Movie>) {
         dataList.clear()
         dataList.addAll(movies)
         notifyDataSetChanged()
@@ -54,7 +54,7 @@ class MoviesAdapter(
         }
 
         @SuppressLint("SetTextI18n", "UseCompatLoadingForDrawables")
-        fun bind(item: MovieDto) {
+        fun bind(item: Movie) {
             Picasso.get().load(item.imageUrl).into(movieImage)
             movieTitle.text = item.title
             movieDescription.text = item.description

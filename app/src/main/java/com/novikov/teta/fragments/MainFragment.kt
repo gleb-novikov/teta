@@ -12,15 +12,11 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.novikov.teta.R
 import com.novikov.teta.adapters.MoviesAdapter
-import com.novikov.teta.movies.MovieDto
-import com.novikov.teta.movies.MoviesDataSourceImpl
-import com.novikov.teta.movies.MoviesModel
 import kotlinx.coroutines.DelicateCoroutinesApi
 
 @DelicateCoroutinesApi
 class MainFragment : Fragment() {
     private val viewModel: MainViewModel by viewModels()
-    private lateinit var moviesList: MutableList<MovieDto>
     private lateinit var moviesAdapter: MoviesAdapter
     private lateinit var recyclerMovies: RecyclerView
     private lateinit var swipeRefresh: SwipeRefreshLayout
@@ -38,7 +34,6 @@ class MainFragment : Fragment() {
     }
 
     private fun init() {
-        moviesList = MoviesModel(MoviesDataSourceImpl()).getMovies().toMutableList()
         swipeRefresh = this.requireView().findViewById(R.id.swipeRefresh)
         swipeRefresh.setOnRefreshListener { viewModel.refreshMovies() }
 

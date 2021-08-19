@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModel
 import androidx.navigation.NavController
 import com.novikov.teta.App
 import com.novikov.teta.R
-import com.novikov.teta.movies.MovieDto
+import com.novikov.teta.database.Movie
 import com.novikov.teta.movies.MoviesDataSourceImpl
 import com.novikov.teta.movies.MoviesModel
 import kotlinx.coroutines.*
@@ -21,8 +21,8 @@ class MainViewModel : ViewModel() {
     val viewState: LiveData<MyViewState> get() = _viewState
     private val _viewState = MutableLiveData<MyViewState>()
 
-    val dataList: LiveData<List<MovieDto>> get() = _dataList
-    private val _dataList = MutableLiveData<List<MovieDto>>()
+    val dataList: LiveData<List<Movie>> get() = _dataList
+    private val _dataList = MutableLiveData<List<Movie>>()
 
     @Suppress("BlockingMethodInNonBlockingContext")
     @DelicateCoroutinesApi
@@ -44,7 +44,7 @@ class MainViewModel : ViewModel() {
         _dataList.postValue(model.getMovies())
     }
 
-    fun navigateToMovie(movie: MovieDto) {
+    fun navigateToMovie(movie: Movie) {
         Toast.makeText(App.applicationContext, movie.title, Toast.LENGTH_SHORT).show()
         navController.navigate(R.id.action_mainFragment_to_movieFragment)
     }

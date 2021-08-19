@@ -24,5 +24,7 @@ class MainActivity : AppCompatActivity() {
         fragmentNavigation = findNavController(R.id.fragmentNavigation)
         bottomNavigation = findViewById(R.id.bottomNavigationMain)
         bottomNavigation.setupWithNavController(fragmentNavigation)
+
+        viewModel.initCurrentMoviesToDB()
     }
 }
