@@ -4,21 +4,20 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.novikov.teta.R
 import com.novikov.teta.adapters.MoviesAdapter
-import com.novikov.teta.movies.MovieDto
-import com.novikov.teta.movies.MoviesDataSourceImpl
-import com.novikov.teta.movies.MoviesModel
-import kotlinx.coroutines.*
+import kotlinx.coroutines.DelicateCoroutinesApi
 
 @DelicateCoroutinesApi
 class MainFragment : Fragment() {
-    private lateinit var moviesList: MutableList<MovieDto>
+    private val viewModel: MainViewModel by viewModels()
+    private lateinit var moviesAdapter: MoviesAdapter
     private lateinit var recyclerMovies: RecyclerView
     private lateinit var swipeRefresh: SwipeRefreshLayout
 
@@ -31,32 +30,29 @@ class MainFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
-        initFragment()
+        init()
     }
 
-    private fun initFragment() {
-        moviesList = MoviesModel(MoviesDataSourceImpl()).getMovies().toMutableList()
-        recyclerMovies = this.requireView().findViewById(R.id.recyclerMovies)
-        recyclerMovies.adapter = MoviesAdapter(moviesList, this::showToast)
+    private fun init() {
         swipeRefresh = this.requireView().findViewById(R.id.swipeRefresh)
-        swipeRefresh.setOnRefreshListener { refreshMovies() }
+        swipeRefresh.setOnRefreshListener { viewModel.refreshMovies() }
+
+        moviesAdapter = MoviesAdapter(viewModel::navigateToMovie)
+        recyclerMovies = this.requireView().findViewById(R.id.recyclerMovies)
+        recyclerMovies.adapter = moviesAdapter
+
+        viewModel.navController = requireView().findNavController()
+        viewModel.dataList.observe(this, Observer(moviesAdapter::initData))
+        viewModel.viewState.observe(this, Observer(::render))
+
+        viewModel.loadMovies()
     }
 
-    private fun showToast(title: String) {
-        Toast.makeText(this.context, title, Toast.LENGTH_SHORT).show()
-        requireView().findNavController().navigate(R.id.action_mainFragment_to_movieFragment)
-    }
+    data class ViewState(
+        val isDownloaded: Boolean = false
+    )
 
-    private fun refreshMovies() {
-        GlobalScope.launch() {
-            withContext(Dispatchers.IO) {
-                Thread.sleep(2000)
-                moviesList.shuffle()
-            }
-            withContext(Dispatchers.Main) {
-                recyclerMovies.adapter?.notifyDataSetChanged()
-                swipeRefresh.isRefreshing = false
-            }
-        }
+    private fun render(viewState: ViewState) = with(viewState) {
+        swipeRefresh.isRefreshing = isDownloaded
     }
 }

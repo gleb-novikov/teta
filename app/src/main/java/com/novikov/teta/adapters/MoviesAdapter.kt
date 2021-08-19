@@ -8,13 +8,13 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.novikov.teta.R
-import com.novikov.teta.movies.MovieDto
+import com.novikov.teta.database.Movie
 import com.squareup.picasso.Picasso
 
 class MoviesAdapter(
-    private val dataList: List<MovieDto>,
-    private val listener: (title: String) -> Unit
+    private val listener: (movie: Movie) -> Unit
 ) : RecyclerView.Adapter<MoviesAdapter.MovieViewHolder>() {
+    private var dataList: MutableList<Movie> = ArrayList()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_movie, parent, false)
@@ -24,11 +24,17 @@ class MoviesAdapter(
     override fun onBindViewHolder(holder: MovieViewHolder, position: Int) {
         holder.bind(dataList[position])
         holder.itemView.setOnClickListener {
-            listener(dataList[position].title)
+            listener(dataList[position])
         }
     }
 
     override fun getItemCount(): Int = dataList.size
+
+    fun initData(movies: List<Movie>) {
+        dataList.clear()
+        dataList.addAll(movies)
+        notifyDataSetChanged()
+    }
 
     class MovieViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         private var movieImage: ImageView = view.findViewById(R.id.itemMovieImage)
@@ -47,8 +53,8 @@ class MoviesAdapter(
             movieImage.clipToOutline = true
         }
 
-        @SuppressLint("SetTextI18n")
-        fun bind(item: MovieDto) {
+        @SuppressLint("SetTextI18n", "UseCompatLoadingForDrawables")
+        fun bind(item: Movie) {
             Picasso.get().load(item.imageUrl).into(movieImage)
             movieTitle.text = item.title
             movieDescription.text = item.description
